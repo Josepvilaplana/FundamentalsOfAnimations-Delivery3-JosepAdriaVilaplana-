@@ -93,6 +93,7 @@ public class MovingTarget: MonoBehaviour
 
     }
 
+
     //IEnumerator ChangeDir()
     //{
     //        //we add a minimum distance because sometimes when the direction change is too near from the border, changing dear makes the ball get lost

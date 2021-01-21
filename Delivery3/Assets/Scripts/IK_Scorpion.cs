@@ -26,6 +26,8 @@ public class IK_Scorpion : MonoBehaviour
     public Transform[] legTargets;
     public Transform[] futureLegBases;
 
+    public bool inShootingPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +44,12 @@ public class IK_Scorpion : MonoBehaviour
 
         NotifyTailTarget();
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             NotifyStartWalk();
             animTime = 0;
             animPlaying = true;
+            inShootingPosition = false;
         }
 
         if (animTime < animDuration)
@@ -56,6 +59,7 @@ public class IK_Scorpion : MonoBehaviour
         else if (animTime >= animDuration && animPlaying)
         {
             Body.position = EndPos.position;
+            inShootingPosition = true;
             animPlaying = false;
         }
 
@@ -73,5 +77,10 @@ public class IK_Scorpion : MonoBehaviour
     {
 
         _myController.NotifyStartWalk();
+    }
+
+    public void NotifyCanShoot()
+    {
+        _myController.CanShoot();
     }
 }

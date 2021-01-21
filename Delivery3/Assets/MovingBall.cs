@@ -9,6 +9,10 @@ public class MovingBall : MonoBehaviour
     [SerializeField]
     IK_tentacles _myOctopus;
     [SerializeField]
+    IK_Scorpion _myScorpion;
+    [SerializeField]
+    LightBlink flashLight;
+    [SerializeField]
     GameObject _target;
 
     //movement speed in units per second
@@ -34,11 +38,15 @@ public class MovingBall : MonoBehaviour
     bool powerIsIncreasing;
     bool PowerBarON;
 
+    //Ball position variables
+    float elapse_time = 0;
+    bool ballKicked = false;
+
     IEnumerator UpdatePowerBar()
     {
         while (PowerBarON)
         {
-            if (Input.GetKey("space"))
+            if (Input.GetKey("space") && _myScorpion.inShootingPosition)
             {
                 if (!powerIsIncreasing)
                 {
@@ -64,7 +72,9 @@ public class MovingBall : MonoBehaviour
                 if (Input.GetKeyUp("space"))
                 {
                     PowerBarON = false;
-                    LaunchRocket();
+                    _myScorpion.NotifyCanShoot();
+                    flashLight.SetEndTime();
+                    Debug.Log("Ball shot");
                     StartCoroutine(TurnOffPowerBar());
 
                 }
@@ -82,11 +92,6 @@ public class MovingBall : MonoBehaviour
         powerBarGO.SetActive(false);
     }
 
-    public void LaunchRocket()
-    {
-        Debug.Log("Ball shot");
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -102,25 +107,24 @@ public class MovingBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        shotDirection = (_target.transform.position - transform.position).normalized;
-        transform.Translate(shotDirection * 1 * Time.deltaTime);
+        //transform.Translate(shotDirection * 1 * Time.deltaTime);
 
         transform.rotation = Quaternion.identity;
 
-        //get the Input from Horizontal axis
-        float horizontalInput = Input.GetAxis("Horizontal");
-        //get the Input from Vertical axis
-        float verticalInput = Input.GetAxis("Vertical");
-
-        //update the position
-        //transform.position = transform.position + new Vector3(-horizontalInput * _movementSpeed * Time.deltaTime, verticalInput * _movementSpeed * Time.deltaTime, 0);
         //VisualizeLine(vo);
+        if (ballKicked)
+        {
+            elapse_time += Time.deltaTime;
+            transform.position = CalculatePosInTime(shotDirection * (currentPowerBarValue/5), elapse_time);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         _myOctopus.NotifyShoot();
+        shotDirection = (_target.transform.position - transform.position).normalized;
+        ballKicked = true;
+
     }
 
     private Vector3 CalculatePosInTime(Vector3 vo, float time)

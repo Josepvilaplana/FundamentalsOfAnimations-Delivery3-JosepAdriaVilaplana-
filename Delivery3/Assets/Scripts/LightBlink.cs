@@ -19,12 +19,6 @@ public class LightBlink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            _endtime = Time.time + _duration;
-        }
-
-
         if(Time.time  <= _endtime)
         { 
             float t = (_endtime - Time.time)/_duration ;
@@ -38,7 +32,10 @@ public class LightBlink : MonoBehaviour
 
     }
 
-
+    public void SetEndTime()
+    {
+        _endtime = Time.time + _duration;
+    }
 
 
 }
