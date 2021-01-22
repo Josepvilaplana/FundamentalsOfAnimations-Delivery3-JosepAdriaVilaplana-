@@ -20,12 +20,6 @@ public class MovingBall : MonoBehaviour
     [SerializeField]
     private float _movementSpeed = 5f;
 
-    Vector3 _dir;
-
-    public LineRenderer lineVisual;
-    public int lineSegment = 10;
-    Vector3 vo;
-
     //Ball direction variables
     Vector3 shotDirection;
 
@@ -36,15 +30,19 @@ public class MovingBall : MonoBehaviour
     float maxPowerBarValue = 100;
     float currentPowerBarValue;
     bool powerIsIncreasing;
-    bool PowerBarON;
+    public bool powerBarON;
 
     //Ball position variables
-    float elapse_time = 0;
-    bool ballKicked = false;
+    float elapse_time = 6;
+    bool ballKicked = true;
+    bool ballStopped = false;
+    public Vector3 initialPosition;
+
+
 
     IEnumerator UpdatePowerBar()
     {
-        while (PowerBarON)
+        while (powerBarON)
         {
             if (Input.GetKey("space") && _myScorpion.inShootingPosition)
             {
@@ -71,10 +69,9 @@ public class MovingBall : MonoBehaviour
 
                 if (Input.GetKeyUp("space"))
                 {
-                    PowerBarON = false;
-                    _myScorpion.NotifyCanShoot();
+                    powerBarON = false;
+                    _myScorpion.NotifyCanShoot(true);
                     flashLight.SetEndTime();
-                    Debug.Log("Ball shot");
                     StartCoroutine(TurnOffPowerBar());
 
                 }
@@ -95,36 +92,55 @@ public class MovingBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lineVisual.positionCount = lineSegment;
-
         //Power bar variables on default values
         currentPowerBarValue = 0;
         powerIsIncreasing = true;
-        PowerBarON = true;
-        StartCoroutine(UpdatePowerBar());
+        powerBarGO.SetActive(true);
+        powerBarON = true;
+        initialPosition = transform.position;
     }
+
 
     // Update is called once per frame
     void Update()
     {
         //transform.Translate(shotDirection * 1 * Time.deltaTime);
-
         transform.rotation = Quaternion.identity;
 
-        //VisualizeLine(vo);
-        if (ballKicked)
+        if (ballKicked && elapse_time > 5)
+        {
+            ballKicked = false;
+            transform.position = initialPosition;
+            elapse_time = 0;
+            PowerBarMask.fillAmount = 0;
+            currentPowerBarValue = 0;
+            powerIsIncreasing = true;
+            powerBarGO.SetActive(true);
+            powerBarON = true;
+            StartCoroutine(UpdatePowerBar());
+            _myScorpion.ResetScene();
+        }
+        else if (ballKicked)
         {
             elapse_time += Time.deltaTime;
-            transform.position = CalculatePosInTime(shotDirection * (currentPowerBarValue/5), elapse_time);
+            //Reduim el temps de calcul de la pilota a un cop hagi creuat la meta per evitar futurs problemes
+            if(elapse_time < 1)
+            {
+                transform.position = CalculatePosInTime(shotDirection * (currentPowerBarValue / 5), elapse_time);
+                Debug.Log("Ball moving: " + transform.position);
+            }
         }
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
-        _myOctopus.NotifyShoot();
-        shotDirection = (_target.transform.position - transform.position).normalized;
-        ballKicked = true;
-
+        if(collision.gameObject.tag == "TailSphere")
+        {
+            _myOctopus.NotifyShoot();
+            shotDirection = (_target.transform.position - transform.position).normalized;
+            ballKicked = true;
+        }
     }
 
     private Vector3 CalculatePosInTime(Vector3 vo, float time)
@@ -138,14 +154,5 @@ public class MovingBall : MonoBehaviour
         result.y = sY;
 
         return result;
-    }
-
-    void VisualizeLine(Vector3 vo)
-    {
-        for (int i = 0; i < lineSegment; i++)
-        {
-            Vector3 pos = CalculatePosInTime(vo, i / (float)lineSegment);
-            lineVisual.SetPosition(i, pos);
-        }
     }
 }

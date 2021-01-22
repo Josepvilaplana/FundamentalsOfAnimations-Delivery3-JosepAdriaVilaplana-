@@ -8,6 +8,7 @@ public class IK_Scorpion : MonoBehaviour
     MyScorpionController _myController= new MyScorpionController();
 
     public IK_tentacles _myOctopus;
+    public MovingBall ball;
 
     [Header("Body")]
     float animTime;
@@ -27,6 +28,7 @@ public class IK_Scorpion : MonoBehaviour
     public Transform[] futureLegBases;
 
     public bool inShootingPosition;
+    bool stopTheBall = true;
 
     // Start is called before the first frame update
     void Start()
@@ -44,13 +46,6 @@ public class IK_Scorpion : MonoBehaviour
 
         NotifyTailTarget();
         
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            NotifyStartWalk();
-            animTime = 0;
-            animPlaying = true;
-            inShootingPosition = false;
-        }
 
         if (animTime < animDuration)
         {
@@ -79,8 +74,27 @@ public class IK_Scorpion : MonoBehaviour
         _myController.NotifyStartWalk();
     }
 
-    public void NotifyCanShoot()
+    public void NotifyCanShoot(bool shoot)
     {
-        _myController.CanShoot();
+        _myController.CanShoot(shoot);
+    }
+
+    public void ResetScene()
+    {
+        ball.gameObject.GetComponent<SphereCollider>().enabled = true;
+        animTime = 0;
+        animPlaying = true;
+        inShootingPosition = false;
+        _myController.RestartBodyPosition();
+        _myController.CanShoot(false);
+        if (stopTheBall)
+        {
+            _myOctopus.SetLetHimScore(true);
+        }
+        else
+        {
+            _myOctopus.SetLetHimScore(false);
+        }
+        stopTheBall = !stopTheBall;
     }
 }

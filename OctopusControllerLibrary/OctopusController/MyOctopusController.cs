@@ -105,16 +105,13 @@ namespace OctopusController
 
         public void NotifyShoot() {
             //If letHimScore is false, changes the bool to stop the ball
-            Debug.Log("Shoot");
+
             shotTime = Time.time;
+            Debug.Log(letHimScore);
             if (!letHimScore)
             {
                 stopTentacle = true;
                 letHimScore = true;
-            }
-            else
-            {
-                letHimScore = false;
             }
         }
 
@@ -123,6 +120,11 @@ namespace OctopusController
         {
             //TODO: implement logic for the correct tentacle arm to stop the ball and implement CCD method
             update_ccd();
+        }
+
+        public void SetLetHimScore(bool state)
+        {
+            letHimScore = state;
         }
 
 

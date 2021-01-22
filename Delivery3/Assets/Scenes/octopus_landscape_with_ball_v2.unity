@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f152fca6933ad439214f8bce62898a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myOctopus: {fileID: 0}
+  _myOctopus: {fileID: 310279045}
   animDuration: 5
   Body: {fileID: 8005202565346199705}
   StartPos: {fileID: 353675564}
@@ -6788,6 +6788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 70f145abed0b4ae48acf34cbafba0570, type: 3}
+      propertyPath: m_TagString
+      value: Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 70f145abed0b4ae48acf34cbafba0570, type: 3}
       propertyPath: m_LocalPosition.x
       value: -123.97
@@ -6989,11 +6993,11 @@ MonoBehaviour:
   flashLight: {fileID: 1710719507}
   _target: {fileID: 1418656077}
   _movementSpeed: 0.5
-  lineVisual: {fileID: 1938829480}
-  lineSegment: 10
   powerBarGO: {fileID: 626838011}
   PowerBarMask: {fileID: 1881392269}
   barChangeSpeed: 3
+  powerBarON: 0
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &1938829487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7478,6 +7482,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 865907604773395664, guid: c9ae8800298c5904a805978e2ff06201,
+        type: 3}
+      propertyPath: m_TagString
+      value: TailSphere
+      objectReference: {fileID: 0}
     - target: {fileID: 962731551332921361, guid: c9ae8800298c5904a805978e2ff06201,
         type: 3}
       propertyPath: m_Name
@@ -7597,6 +7606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926132714208926850, guid: c9ae8800298c5904a805978e2ff06201,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8005202564104028491, guid: c9ae8800298c5904a805978e2ff06201,
         type: 3}

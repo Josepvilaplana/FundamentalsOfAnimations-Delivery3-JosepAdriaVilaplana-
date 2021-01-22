@@ -33,8 +33,7 @@ namespace OctopusController
         bool done;
         float treshold_condition = 0.01f;
         float maxIterations = 10;
-
-
+        
         #region public
         public void InitLegs(Transform[] LegRoots,Transform[] LegFutureBases, Transform[] LegTargets)
         {
@@ -85,9 +84,9 @@ namespace OctopusController
             tailTarget = target;
         }
 
-        public void CanShoot()
+        public void CanShoot(bool shoot)
         {
-            canShoot = true;
+            canShoot = shoot;
         }
 
         //TODO: Notifies the start of the walking animation
@@ -96,6 +95,28 @@ namespace OctopusController
             walking = true;
             animationTime = 0;
             animationRange = 5;
+        }
+
+        public void RestartBodyPosition()
+        {
+            //TODO: Initialize anything needed for the Gradient Descent implementation
+            _tail.StartOffset = new Vector3[_tail.Bones.Length];
+            _tail.StartAngle = new Vector3[_tail.Bones.Length];
+            _tail.Theta = new float[_tail.Bones.Length];
+            _tail.Sin = new float[_tail.Bones.Length];
+            _tail.Cos = new float[_tail.Bones.Length];
+
+            for (int i = 0; i < _tail.Bones.Length; i++)
+            {
+                //_tail.Theta[i] = _tail.Bones[i].transform.localEulerAngles.x * Mathf.Deg2Rad;
+                _tail.Bones[i].localEulerAngles = _tail.Axis[i] * _tail.Theta[i];
+                _tail.StartAngle[i] = _tail.Bones[i].transform.localEulerAngles;
+                if (i != 0)
+                {
+                    _tail.StartOffset[i] = _tail.Bones[i].transform.position - _tail.Bones[i - 1].transform.position;
+                    tailRange += _tail.StartOffset[i].magnitude;
+                }
+            }
         }
 
         //TODO: create the apropiate animations and update the IK from the legs and tail
