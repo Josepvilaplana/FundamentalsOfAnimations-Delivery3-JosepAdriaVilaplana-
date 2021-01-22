@@ -145,9 +145,7 @@ public class MovingBall : MonoBehaviour
 
     private Vector3 CalculatePosInTime(Vector3 vo, float time)
     {
-        Vector3 vxz = vo;
-        vxz.y = 0f;
-
+        
         Vector3 result = transform.position + vo * time;
         float sY = (-0.5f * Mathf.Abs(Physics.gravity.y) * (time * time)) + (vo.y * time) + transform.position.y;
 

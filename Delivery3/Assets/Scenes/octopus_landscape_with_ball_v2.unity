@@ -1011,6 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
   animDuration: 5
   Body: {fileID: 8005202565346199705}
   StartPos: {fileID: 353675564}
@@ -1558,6 +1559,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 67391891}
     m_Modifications:
+    - target: {fileID: 1135955657284416808, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_TagString
+      value: TentacleTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487926539290533688, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1938829485}
+    - target: {fileID: 1866971363106164297, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1938829485}
     - target: {fileID: 3864245864637111868, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1623,6 +1639,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoalWithColliders
       objectReference: {fileID: 0}
+    - target: {fileID: 4626789759767247970, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_TagString
+      value: TentacleTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573067472709859215, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_TagString
+      value: TentacleTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114655632933380683, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_TagString
+      value: TentacleTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809464203361847744, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1938829485}
+    - target: {fileID: 8042073676035777868, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1938829485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d439f53ec8b4d5c4d9b801d4b27cd89c, type: 3}
 --- !u!4 &501916522 stripped
@@ -4607,6 +4648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 1363077253}
+  ball: {fileID: 0}
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
@@ -5391,6 +5433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
@@ -6560,6 +6603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 319744861}
+  ball: {fileID: 0}
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
