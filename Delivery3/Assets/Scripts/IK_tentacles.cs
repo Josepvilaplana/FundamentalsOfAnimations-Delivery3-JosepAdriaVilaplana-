@@ -57,7 +57,10 @@ public class IK_tentacles : MonoBehaviour
         _myController.NotifyShoot();
     }
 
-
+    public void SetLetHimScore(bool state)
+    {
+        _myController.SetLetHimScore(state);
+    }
     #endregion
 
 
@@ -89,6 +92,6 @@ public class IK_tentacles : MonoBehaviour
             _myController.SwingMin = _swingMin;
             _updateTwistSwingLimits = false;
         }
-
+        
     }
 }

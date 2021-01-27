@@ -6,7 +6,8 @@ public class MovingTarget: MonoBehaviour
 {
     [SerializeField]
     IK_tentacles _myOctopus;
-
+    [SerializeField]
+    MovingBall ball;
 
     //random will create an object moving randomly within a box.
     enum MovingMode {RANDOM, USERTARGET };
@@ -93,6 +94,7 @@ public class MovingTarget: MonoBehaviour
 
     }
 
+
     //IEnumerator ChangeDir()
     //{
     //        //we add a minimum distance because sometimes when the direction change is too near from the border, changing dear makes the ball get lost
@@ -118,8 +120,14 @@ public class MovingTarget: MonoBehaviour
     {
         if(_mode == MovingMode.USERTARGET)
             _myOctopus.NotifyTarget(transform, collision.collider.transform);
-
         //Debug.Log("I am object " + name + "  and i enter collision with " + collision.collider.name);
+
+        //The tentacle has stopped the ball
+        if(collision.gameObject.tag == "Ball")
+        {
+            Debug.Log("Pilota parada.");
+            ball.gameObject.GetComponent<SphereCollider>().enabled = false;
+        }
     }
 
 
