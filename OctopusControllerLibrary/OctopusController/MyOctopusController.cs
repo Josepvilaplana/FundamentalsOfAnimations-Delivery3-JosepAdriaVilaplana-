@@ -107,14 +107,12 @@ namespace OctopusController
             //If letHimScore is false, changes the bool to stop the ball
 
             shotTime = Time.time;
-            Debug.Log(letHimScore);
             if (!letHimScore)
             {
                 stopTentacle = true;
                 letHimScore = true;
             }
         }
-
 
         public void UpdateTentacles()
         {
@@ -127,6 +125,10 @@ namespace OctopusController
             letHimScore = state;
         }
 
+        public bool GetLetHimScore()
+        {
+            return letHimScore;
+        }
 
         #endregion
 

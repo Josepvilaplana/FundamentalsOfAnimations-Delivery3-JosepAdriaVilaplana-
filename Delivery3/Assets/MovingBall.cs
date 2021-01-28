@@ -39,7 +39,6 @@ public class MovingBall : MonoBehaviour
     public Vector3 initialPosition;
 
 
-
     IEnumerator UpdatePowerBar()
     {
         while (powerBarON)
@@ -110,6 +109,7 @@ public class MovingBall : MonoBehaviour
         if (ballKicked && elapse_time > 5)
         {
             ballKicked = false;
+            ballStopped = false;
             transform.position = initialPosition;
             elapse_time = 0;
             PowerBarMask.fillAmount = 0;
@@ -124,10 +124,9 @@ public class MovingBall : MonoBehaviour
         {
             elapse_time += Time.deltaTime;
             //Reduim el temps de calcul de la pilota a un cop hagi creuat la meta per evitar futurs problemes
-            if(elapse_time < 1)
+            if(elapse_time < 0.5 && !ballStopped)
             {
-                transform.position = CalculatePosInTime(shotDirection * (currentPowerBarValue / 5), elapse_time);
-                Debug.Log("Ball moving: " + transform.position);
+                transform.position = CalculatePosInTime(shotDirection * (currentPowerBarValue / 6), elapse_time);
             }
         }
     }
@@ -141,7 +140,10 @@ public class MovingBall : MonoBehaviour
             shotDirection = (_target.transform.position - transform.position).normalized;
             ballKicked = true;
         }
+
     }
+
+
 
     private Vector3 CalculatePosInTime(Vector3 vo, float time)
     {
@@ -152,5 +154,10 @@ public class MovingBall : MonoBehaviour
         result.y = sY;
 
         return result;
+    }
+
+    public void SetBallStopped(bool state)
+    {
+        ballStopped = state;
     }
 }

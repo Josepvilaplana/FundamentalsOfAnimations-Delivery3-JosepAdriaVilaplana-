@@ -345,48 +345,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8005202565346199704}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &213080985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+--- !u!95 &213080986 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c,
     type: 3}
   m_PrefabInstance: {fileID: 1154099504}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &213080987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213080985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &218563884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7068565183043170375, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
     type: 3}
   m_PrefabInstance: {fileID: 842651052}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &231825130 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+--- !u!95 &231825131 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c,
     type: 3}
   m_PrefabInstance: {fileID: 256053683}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &231825132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231825130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &235504432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentacle_left2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604484684336232915, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Octopus
       objectReference: {fileID: 0}
     - target: {fileID: 5604484684336456755, guid: 13021f19f9cbea748b2bae15b81ad0d7,
         type: 3}
@@ -468,6 +449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13021f19f9cbea748b2bae15b81ad0d7, type: 3}
@@ -619,7 +610,7 @@ GameObject:
   - component: {fileID: 310279045}
   m_Layer: 0
   m_Name: OctopusBlueTeam
-  m_TagString: Untagged
+  m_TagString: Octopus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -871,6 +862,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tentacle_right2
       objectReference: {fileID: 0}
+    - target: {fileID: 5604484684336232915, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Octopus
+      objectReference: {fileID: 0}
     - target: {fileID: 5604484684336456755, guid: 13021f19f9cbea748b2bae15b81ad0d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,6 +936,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13021f19f9cbea748b2bae15b81ad0d7, type: 3}
@@ -1126,6 +1132,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 67391891}
     m_Modifications:
+    - target: {fileID: 7726022311939767, guid: d439f53ec8b4d5c4d9b801d4b27cd89c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726022311939767, guid: d439f53ec8b4d5c4d9b801d4b27cd89c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726022311939767, guid: d439f53ec8b4d5c4d9b801d4b27cd89c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 1135955657284416808, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
         type: 3}
       propertyPath: m_TagString
@@ -1211,10 +1229,40 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TentacleTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 5048743419276976005, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048743419276976005, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048743419276976005, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 5573067472709859215, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
         type: 3}
       propertyPath: m_TagString
       value: TentacleTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068565183043170375, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068565183043170375, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7068565183043170375, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 7114655632933380683, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
         type: 3}
@@ -1231,6 +1279,21 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1938829485}
+    - target: {fileID: 8795484655303537771, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795484655303537771, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795484655303537771, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d439f53ec8b4d5c4d9b801d4b27cd89c, type: 3}
 --- !u!4 &501916522 stripped
@@ -1250,6 +1313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentacle_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604484684336232915, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Octopus
       objectReference: {fileID: 0}
     - target: {fileID: 5604484684336456755, guid: 13021f19f9cbea748b2bae15b81ad0d7,
         type: 3}
@@ -1321,6 +1389,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13021f19f9cbea748b2bae15b81ad0d7, type: 3}
 --- !u!4 &523450251 stripped
@@ -1367,7 +1445,7 @@ GameObject:
   - component: {fileID: 605977356}
   m_Layer: 0
   m_Name: littleOctopus
-  m_TagString: Untagged
+  m_TagString: Octopus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2396,6 +2474,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 842651052}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &985388175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663060515947351478, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 523450250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &985388181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985388175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
 --- !u!1 &999087690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 1363077253}
   ball: {fileID: 0}
+  playerTarget: 1
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
@@ -2798,7 +2897,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1efed77d24e343443aad5b627f039fd1, type: 2}
+      objectReference: {fileID: 9100000, guid: e946bbc2e818a3f4cb9eecdb4213cb99, type: 2}
     - target: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_Name
       value: Robot Kyle
@@ -3036,7 +3135,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1efed77d24e343443aad5b627f039fd1, type: 2}
+      objectReference: {fileID: 9100000, guid: e946bbc2e818a3f4cb9eecdb4213cb99, type: 2}
     - target: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
       propertyPath: m_Name
       value: Robot Kyle (2)
@@ -3095,6 +3194,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+--- !u!1 &1222553029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663060515947351478, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 362222623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1222553035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222553029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
 --- !u!4 &1236415040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8795484655303537771, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
@@ -3443,7 +3562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418656077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: 0, z: -0}
+  m_LocalPosition: {x: 1.6, y: 0, z: -9.56}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 67391891}
@@ -3510,6 +3629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 310279045}
   ball: {fileID: 1938829485}
+  playerTarget: 0
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
@@ -3770,6 +3890,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8005202565346199704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1615554040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663060515947351478, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955157296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615554046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615554040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
 --- !u!1 &1626681428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,6 +4067,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634104064}
   m_Mesh: {fileID: 4300004, guid: 1a6216de7989365449cc728647201f7e, type: 3}
+--- !u!1 &1641296805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641296807}
+  - component: {fileID: 1641296806}
+  m_Layer: 0
+  m_Name: AnimationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1641296806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641296805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5de9398c4a14324e8ff381acda0a950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - {fileID: 213080986}
+  - {fileID: 231825131}
+  - {fileID: 1738228606}
+  - {fileID: 2086393621}
+--- !u!4 &1641296807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641296805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -135.0518, y: 19.342756, z: -75.22824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652727224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,6 +4477,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0.22
+--- !u!1 &1720604808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663060515947351478, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 235504432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720604814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720604808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myOctopus: {fileID: 310279045}
+  ball: {fileID: 1938829485}
 --- !u!1 &1725396508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4378,24 +4586,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1738228605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+--- !u!95 &1738228606 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c,
     type: 3}
   m_PrefabInstance: {fileID: 1220627684}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1738228607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1738228605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1739306847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8005202564196146634, guid: c9ae8800298c5904a805978e2ff06201,
@@ -4692,6 +4888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myOctopus: {fileID: 319744861}
   ball: {fileID: 0}
+  playerTarget: 1
   _mode: 1
   _movementSpeed: 5
   _region: {fileID: 0}
@@ -5200,22 +5397,6 @@ MonoBehaviour:
   barChangeSpeed: 3
   powerBarON: 0
   initialPosition: {x: 0, y: 0, z: 0}
---- !u!54 &1938829487
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938829479}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &1946850105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7726022311939767, guid: d439f53ec8b4d5c4d9b801d4b27cd89c,
@@ -5233,6 +5414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tentacle_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604484684336232915, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Octopus
       objectReference: {fileID: 0}
     - target: {fileID: 5604484684336456755, guid: 13021f19f9cbea748b2bae15b81ad0d7,
         type: 3}
@@ -5303,6 +5489,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663060515947351479, guid: 13021f19f9cbea748b2bae15b81ad0d7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13021f19f9cbea748b2bae15b81ad0d7, type: 3}
@@ -5569,24 +5765,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -8.3, y: 180, z: 0}
---- !u!1 &2086393620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100096, guid: 320b1c2af77554f99a1658df4a6d3d5c,
+--- !u!95 &2086393621 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 320b1c2af77554f99a1658df4a6d3d5c,
     type: 3}
   m_PrefabInstance: {fileID: 1914559395}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2086393622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086393620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b42d0f2de3c86a4dae4a1b492dda98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2117437083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7445453427392495510, guid: c9ae8800298c5904a805978e2ff06201,

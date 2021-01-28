@@ -17,7 +17,7 @@ public class IK_tentacles : MonoBehaviour
 
     MyOctopusController _myController = new MyOctopusController();
     
-
+    
 
     [Header("Exercise 3")]
     [SerializeField, Range(0, 360)]
@@ -60,6 +60,11 @@ public class IK_tentacles : MonoBehaviour
     public void SetLetHimScore(bool state)
     {
         _myController.SetLetHimScore(state);
+    }
+
+    public bool GetLetHimScore()
+    {
+        return _myController.GetLetHimScore();
     }
     #endregion
 
