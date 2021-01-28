@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a252e0e168c6ce54b921c5fe6abf4a8d
+guid: 28ba7d55118da3b4e9c8fc96a819130b
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 1649489361740963706
-    second: IdleTakeLeft
+      74: -2210911085182983499
+    second: VictoryTakeLeft
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -28,28 +28,12 @@ ModelImporter:
       : position error = 413.032806 mm\n\t'Right_Toe_Joint_01' : position error =
       131.196198 mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'IdleTake' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+    animationImportWarnings: "\nClip 'VictoryTake' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Hip' is inbetween humanoid transforms and
       has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'IdleTake':\n\tLeftLowerLeg
-      average position error 405.9 mm and maximum position error 424.3 mm at time
-      25:20 (57.4%) Frame 620\n\tLeftFoot average position error 655.3 mm and maximum
-      position error 665.7 mm at time 25:22 (57.6%) Frame 622\n\tRightLowerLeg average
-      position error 391.2 mm and maximum position error 413.0 mm at time 25:20 (57.4%)
-      Frame 620\n\tRightFoot average position error 710.9 mm and maximum position
-      error 730.5 mm at time 26:11 (58.8%) Frame 635\n\tLeftUpperArm average position
-      error 365.0 mm and maximum position error 365.0 mm at time 1: 8 (3.0%) Frame
-      32\n\tLeftLowerArm average position error 263.8 mm and maximum position error
-      384.1 mm at time 35:14 (79.1%) Frame 854\n\tLeftHand average position error
-      228.1 mm and maximum position error 379.5 mm at time 33: 5 (73.8%) Frame 797\n\tRightUpperArm
-      average position error 365.0 mm and maximum position error 365.0 mm at time
-      22:23 (51.0%) Frame 551\n\tRightLowerArm average position error 280.8 mm and
-      maximum position error 383.3 mm at time 25: 2 (55.7%) Frame 602\n\tRightHand
-      average position error 212.1 mm and maximum position error 331.1 mm at time
-      7:14 (16.9%) Frame 182\n\tHead average position error 512.6 mm and maximum
-      position error 521.6 mm at time 16: 7 (36.2%) Frame 391\n"
-    animationDoRetargetingWarnings: 1
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
@@ -61,18 +45,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: IdleTakeLeft
-      takeName: IdleTake
+      name: VictoryTakeLeft
+      takeName: VictoryTake
       internalID: 0
       firstFrame: 0
-      lastFrame: 1079
+      lastFrame: 134
       wrapMode: 0
       orientationOffsetY: 0
       level: -0.63
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
