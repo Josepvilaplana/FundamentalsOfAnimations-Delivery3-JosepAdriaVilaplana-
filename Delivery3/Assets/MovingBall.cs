@@ -103,6 +103,8 @@ public class MovingBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log(ballStopped);
         //transform.Translate(shotDirection * 1 * Time.deltaTime);
         transform.rotation = Quaternion.identity;
 
@@ -159,5 +161,10 @@ public class MovingBall : MonoBehaviour
     public void SetBallStopped(bool state)
     {
         ballStopped = state;
+    }
+
+    public bool GetBallStopped()
+    {
+        return ballStopped;
     }
 }

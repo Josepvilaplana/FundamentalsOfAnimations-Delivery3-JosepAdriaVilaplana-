@@ -10,6 +10,7 @@ public class ScoreControl : MonoBehaviour
     [SerializeField]
     MovingBall ball;
 
+    public AnimatorControl animator;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,8 @@ public class ScoreControl : MonoBehaviour
         if(other.gameObject.tag == "Ball")
         {
             ball.SetBallStopped(true);
-            ball.transform.position += new Vector3(0, 0, 3);
+            ball.transform.position += new Vector3(0, 0, 10);
             Debug.Log("The octopus has stopped the ball!");
-
         }
 
     }
