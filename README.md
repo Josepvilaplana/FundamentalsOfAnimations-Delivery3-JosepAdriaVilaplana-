@@ -8,6 +8,10 @@
 
 ![alt text](https://s3-eu-west-1.amazonaws.com/classlife/profile/student/2018/10/thumbnail/201810031413IMG_20181003_141153.jpg)
 
+# How to play
+When the game starts you are allowed to aim at the goal with the W, A, S, D keys.
+After a while the scorpion arrives. Once it is in position, the power of the shot can be calculated by holding the Space key. The bar on the right will start to go up and down, stopping just when the button is released. This is when the scorpion will kick the ball with its tail. After 5 seconds of shooting, the loop will restart.
+You can exit the game by pressing Escape.
 
 ## Introduction
 You are asked to finish a prototype of a game where you shoot a ball against a goal-keeper, which
@@ -47,6 +51,9 @@ In the folder Scripts of the project there are 9 C# scripts:
 - **AnimatorControl**
   - You can find it in: SceneRoot/AnimatorController
   - Description: This script takes the animators of the four models from the audience in the bank and the MovingBall object of the game. Its main function is to reproduce the animations of victory and disbelief on the robots depending on whether the ball has entered the net or not.
+- **GameManager**
+  - You can find it in: SceneRoot/MainCamera
+  - Description: It is only used to allow the player to exit the game by pressing the Escape key.
 - **IK_Scorpion**
   - You can find it in: *SceneRoot/Scorpion*
   - Description: This script controls the movements of the scorpion. It connects to the OctopusController library to initialize the scorpion's leg and tail joints as well as the scorpion's movement around the stage. It is also in charge of calculating the position of the targets of the legs through ray casts to overcome obstacles and contains a function to reset the necessary values each time the ball is shot again
