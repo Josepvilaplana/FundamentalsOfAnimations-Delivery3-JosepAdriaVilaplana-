@@ -29,6 +29,14 @@ public class IK_Scorpion : MonoBehaviour
 
     public bool inShootingPosition;
     bool stopTheBall = true;
+    
+    //---Raycast variables---
+    //This will later hold the data for the hit
+    RaycastHit hit;
+    //Modify it to change the length of the Ray
+    public float distance = 50f;
+    //A variable to store the location of the hit.
+    Vector3 targetLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +57,7 @@ public class IK_Scorpion : MonoBehaviour
 
         if (animTime < animDuration)
         {
+            UpdateFutureLegPositions();
             Body.position = Vector3.Lerp(StartPos.position, EndPos.position, animTime / animDuration);
         }
         else if (animTime >= animDuration && animPlaying)
@@ -61,6 +70,21 @@ public class IK_Scorpion : MonoBehaviour
         _myController.UpdateIK();
     }
     
+    void UpdateFutureLegPositions()
+    { 
+
+        for (int i = 0; i < futureLegBases.Length; i++)
+        {
+            if (Physics.Raycast(futureLegBases[i].transform.position + new Vector3(0,30,0), Vector3.down, out hit, distance))
+            {
+                //Set the target location to the location of the hit.
+                targetLocation = hit.point;
+                //Move the object to the target location.
+                futureLegBases[i].transform.position = targetLocation;
+            }
+        }
+    }
+
     //Function to send the tail target transform to the dll
     public void NotifyTailTarget()
     {
