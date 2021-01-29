@@ -67,7 +67,7 @@ public class IK_Scorpion : MonoBehaviour
             animPlaying = false;
         }
 
-        _myController.UpdateIK();
+        _myController.UpdateIK(Time.deltaTime);
     }
     
     void UpdateFutureLegPositions()
