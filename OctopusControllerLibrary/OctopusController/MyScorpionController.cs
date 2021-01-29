@@ -26,7 +26,9 @@ namespace OctopusController
         Transform[] legFutureBases;
         MyTentacleController[] _legs = new MyTentacleController[6];
         float animationRange;
-        float animationTime;
+        float[] animTime = new float[6];
+        bool[] animPlaying = new bool[6];
+        float animDuration = 0.1f;
         bool walking;
         Vector3[] copy;
         float[] legDistances;
@@ -45,10 +47,13 @@ namespace OctopusController
             {
                 _legs[i] = new MyTentacleController();
                 _legs[i].LoadTentacleJoints(LegRoots[i], TentacleMode.LEG);
+                animTime[i] = 0;
+                animPlaying[i] = false;
                 //TODO: initialize anything needed for the FABRIK implementation
             }
             copy = new Vector3[_legs[0].Bones.Length];
             legDistances = new float[_legs[0].Bones.Length - 1];
+
         }
 
         public void InitTail(Transform TailBase)
@@ -93,7 +98,6 @@ namespace OctopusController
         public void NotifyStartWalk()
         {
             walking = true;
-            animationTime = 0;
             animationRange = 5;
         }
 
@@ -121,9 +125,9 @@ namespace OctopusController
 
         //TODO: create the apropiate animations and update the IK from the legs and tail
 
-        public void UpdateIK()
+        public void UpdateIK(float delta)
         {
-            updateLegPos();
+            updateLegPos(delta);
             updateTail();
         }
         #endregion
@@ -131,13 +135,25 @@ namespace OctopusController
 
         #region private
         //TODO: Implement the leg base animations and logic
-        private void updateLegPos()
+        private void updateLegPos(float delta)
         {
             for (int i = 0; i < 6; i++)
             {
                 if ((Vector3.Distance(_legs[i].Bones[0].transform.position, legFutureBases[i].transform.position)) > 1)
                 {
-                    _legs[i].Bones[0].transform.position = legFutureBases[i].transform.position;
+                    animPlaying[i] = true;
+                    //_legs[i].Bones[0].transform.position = legFutureBases[i].transform.position;
+                }
+                if(animPlaying[i] && (animTime[i] < animDuration))
+                {
+                    Debug.Log("The leg " + i + "is moving " + animTime[i]);
+                    animTime[i] += delta;
+                    _legs[i].Bones[0].transform.position = Vector3.Lerp(_legs[i].Bones[0].transform.position, legFutureBases[i].transform.position, animTime[i] / animDuration);
+                }
+                else
+                {
+                    animTime[i] = 0;
+                    animPlaying[i] = false;
                 }
             }
             updateLegs();
