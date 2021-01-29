@@ -146,7 +146,6 @@ namespace OctopusController
                 }
                 if(animPlaying[i] && (animTime[i] < animDuration))
                 {
-                    Debug.Log("The leg " + i + "is moving " + animTime[i]);
                     animTime[i] += delta;
                     _legs[i].Bones[0].transform.position = Vector3.Lerp(_legs[i].Bones[0].transform.position, legFutureBases[i].transform.position, animTime[i] / animDuration);
                 }
