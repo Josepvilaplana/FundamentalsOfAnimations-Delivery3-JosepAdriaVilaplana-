@@ -17,12 +17,8 @@ public class NotifyRegion : MonoBehaviour
 
     void Update()
     {
-    
-
 
     }
-
-
 
 
     private void OnCollisionExit(Collision collision)
