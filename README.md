@@ -1,8 +1,7 @@
 # Fundamentals of modeling and character animation
 # Delivery3
 
-## Team Description
-- Group ID: 22
+## Student Description
 - Name: Josep Adrià Vilaplana Miret
 - Mail: josepadriavilaplanamiret@enti.cat
 
